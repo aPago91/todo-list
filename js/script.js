@@ -14,7 +14,9 @@ document.getElementById("add").addEventListener("click", function () {
 		listText.textContent = myItem;
 		list.appendChild(listItem);
     
-		
+		listText.onclick = function () {
+			listItem.contentEditable = true;
+		}
 		
 	} else {
 		console.log('Brak tekstu');
