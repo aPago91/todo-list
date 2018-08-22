@@ -1,3 +1,5 @@
+ document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM fully loaded and parsed");
 document.getElementById("add").addEventListener("click", function () {
 	var value = document.getElementById('item').value;
 	var list = document.getElementById('todo');
@@ -37,10 +39,12 @@ document.getElementById("add").addEventListener("click", function () {
 
 			switch (choice) {
 				case 'Edit':
+					function myFunction() {
 					listText.contentEditable = true;
+					}
 					break;
 				case 'delete':
-					list.removeChild(listItem);
+						
 					break;
 				case 'done':
 					break;
@@ -51,4 +55,5 @@ document.getElementById("add").addEventListener("click", function () {
 		else {
 			console.log('Brak tekstu');
 		}
-	});
+})
+ });
