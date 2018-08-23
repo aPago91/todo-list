@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		        
 			var listItem = document.createElement('li');
 			var listText = document.createElement('span');
+			listText.setAttribute("id","txt-1");
 			var listDiv = document.createElement ('div');
 			listDiv.setAttribute("id","btn");
 			var btnEdit = document.createElement("button");
@@ -35,8 +36,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 				switch (choice) {
 					case 'Edit':
-						document.getElementsByTagName("ul")[0].getElementsByTagName("li")[0];
-						listText.contentEditable = true;
+						//document.getElementsByTagName("span")[0];
+						//listText.contentEditable = true;
+						if (listText.contentEditable == "true") {
+							listText.contentEditable = "false";
+						} else {
+							listText.contentEditable = "true";
+						}
 						break;
 					case 'Delete':
 						list.removeChild(listItem);
