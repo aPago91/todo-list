@@ -35,12 +35,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 				switch (choice) {
 					case 'Edit':
-						document.getElementsByTagName("li")[0];
+						document.getElementsByTagName("ul")[0].getElementsByTagName("li")[0];
 						listText.contentEditable = true;
 						break;
 					case 'Delete':
+						list.removeChild(listItem);
 						break;
 					case 'Done':
+						document.getElementsByTagName("ul")[0].getElementsByTagName("li")[0].style.color = "green";
+						document.getElementsByTagName("ul")[0].getElementsByTagName("li")[0].style.fontWeight = "bold";
+						document.getElementById("btn").remove();
 						break;
 					default:
 				}
