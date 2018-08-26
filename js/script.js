@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		        
 			var listItem = document.createElement('li');
 			var listText = document.createElement('span');
-			listText.setAttribute("id","txt-1");
 			var listDiv = document.createElement ('div');
 			listDiv.setAttribute("id","btn");
 			var btnEdit = document.createElement("button");
@@ -23,21 +22,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 			listItem.appendChild(listText);
 			listText.textContent = myItem;
-			listText.appendChild(listDiv);
+			listItem.appendChild(listDiv);
 			listDiv.appendChild(btnEdit).textContent = 'Edit';
 			listDiv.appendChild(btnDelete).textContent = 'Delete';
 			listDiv.appendChild(btnDone).textContent = 'Done';
 			list.appendChild(listItem);
-		
-			listItem.addEventListener('click', setButton);
-		
-			function setButton(event) {
+		  
+			listItem.addEventListener('click', function setButton(event) {
 				var choice = event.target.className;
 
 				switch (choice) {
 					case 'Edit':
-						//document.getElementsByTagName("span")[0];
-						//listText.contentEditable = true;
 						if (listText.contentEditable == "true") {
 							listText.contentEditable = "false";
 						} else {
@@ -54,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						break;
 					default:
 				}
-			} 
+			})
 		}
 		else {
 			console.log('Brak tekstu');
