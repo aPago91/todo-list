@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	console.log("DOM fully loaded and parsed");
-	document.getElementById("add").addEventListener("click", function () {
+	document.getElementById("add").addEventListener("click", function addTodo() {
 		var value = document.getElementById('item').value;
 		var list = document.getElementById('todo');
 		var input = document.querySelector('input');
